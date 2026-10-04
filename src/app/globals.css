@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #1c2430;
+  --ink-soft: #3e4c5e;
+  --paper: #f3f5f8;
+  --canvas: #eef1f5;
+  --copper: #4f46b5;
+  --copper-deep: #3730a3;
+  --sage: #0f7a56;
+  --sand: #ffffff;
+  --line: #e2e6ed;
+  --muted: #6b7585;
+  --danger: #b42318;
+  --rail: #1b2230;
+  --gold: #d79a08;
+  color-scheme: light;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-canvas: var(--canvas);
+  --color-copper: var(--copper);
+  --color-copper-deep: var(--copper-deep);
+  --color-sage: var(--sage);
+  --color-sand: var(--sand);
+  --color-line: var(--line);
+  --color-muted: var(--muted);
+  --color-danger: var(--danger);
+  --color-rail: var(--rail);
+  --color-gold: var(--gold);
+  --font-sans: var(--font-plex), sans-serif;
+  --font-display: var(--font-plex), sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+.canvas-dots {
+  background-color: #f7f8fa;
+  background-image: radial-gradient(rgb(28 36 48 / 16%) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.edge-flow {
+  stroke-dasharray: 14 120;
+  animation: edge-flow 2.4s linear infinite;
+}
+
+@keyframes edge-flow {
+  to {
+    stroke-dashoffset: -268;
+  }
 }
